@@ -207,7 +207,7 @@ export default function Home() {
          <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
                  <div className="absolute -inset-4 border-2 border-gold/20 rounded-lg transform translate-x-4 translate-y-4"></div>
-                <img src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?q=80&w=1932&auto=format&fit=crop" alt="Assaying" className="rounded-lg shadow-2xl relative z-10" />
+                <img src="https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/niceone%20(1).png" alt="Assaying" className="rounded-lg shadow-2xl relative z-10" />
             </div>
             <div>
                 <h2 className="text-gold font-sans text-sm tracking-[0.3em] uppercase mb-4">Precision Assaying</h2>
@@ -336,7 +336,7 @@ export default function Home() {
                  </div>
                  <div className="relative">
                      <div className="absolute -inset-6 border border-gold/20 rounded-full animate-spin-slow"></div>
-                     <img src="https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/The%20PureTrust%20Promise.png" alt="The PureTrust Promise" className="w-full h-full object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+                     <img src="https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/The%20PureTrust%20Promise2.png" alt="The PureTrust Promise" className="w-full h-full object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
                  </div>
              </div>
          </div>
@@ -356,14 +356,19 @@ export default function Home() {
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-             {['New York', 'Puerto Rico', 'Toronto', 'Mexico City'].map((loc, idx) => (
+             {[
+               { name: 'New York', img: 'https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/New%20York.png' },
+               { name: 'Puerto Rico', img: 'https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/Puerto%20Rico.png' },
+               { name: 'Toronto', img: 'https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/Toronto.png' },
+               { name: 'Mexico City', img: 'https://bznwydxnqyumngwscbfy.supabase.co/storage/v1/object/public/My%20Images/Mexico%20City.png' }
+             ].map((loc, idx) => (
                <div key={idx} className="relative h-96 bg-gray-900 overflow-hidden group border-b-4 border-gold">
                  <div className="absolute inset-0 bg-gray-800 group-hover:scale-105 transition-transform duration-700">
-                    <img src={`https://picsum.photos/seed/${loc}luxury/400/600`} alt={loc} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all" />
+                    <img src={loc.img} alt={loc.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all" />
                  </div>
                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                  <div className="absolute bottom-8 left-8">
-                   <h4 className="text-3xl font-serif text-white mb-2">{loc}</h4>
+                   <h4 className="text-3xl font-serif text-white mb-2">{loc.name}</h4>
                    <p className="text-gray-400 text-xs mb-6">Secure Financial District</p>
                    <Link href="/book" className="flex items-center text-white text-xs uppercase tracking-widest hover:text-gold transition-colors">
                       Book Here <span className="ml-2">→</span>
